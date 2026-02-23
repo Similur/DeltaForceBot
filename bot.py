@@ -7,8 +7,8 @@ import re
 from typing import List
 
 # --- CONFIGURATION ---
-TOKEN = 'MTQ3NTYxNzE0MjAyMjg2OTEwMw.GQiWCa.VykxyceyAy6kOH6eXoPTRYlSntFVSPCUH7rbjE'
-MY_GUILD_ID = 1344509250918944841  # Replace with your Server ID for instant sync
+TOKEN = ''
+MY_GUILD_ID =   # Replace with your Server ID for instant sync
 BASE_URL = "https://codmunity.gg/weapon/deltaforce/"
 
 # List for Autocomplete

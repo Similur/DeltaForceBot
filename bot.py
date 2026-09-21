@@ -8,10 +8,9 @@ from typing import List
 
 # --- CONFIGURATION ---
 TOKEN = ''
-MY_GUILD_ID =   # Replace with your Server ID for instant sync
+MY_GUILD_ID =
 BASE_URL = "https://codmunity.gg/weapon/deltaforce/"
 
-# List for Autocomplete
 WEAPONS = [
     "M4A1", "AKM", "AUG", "AS-VAL", "SCAR-H", "M16A4", "K416", "CI-19", "K437", 
     "SG552", "AKS-74", "ASH-12", "G3", "M7", "MCX-LT-Assault-Rifle", "QCQ171", "MP5", "MP7", 
@@ -46,11 +45,11 @@ def get_weapon_data(weapon_name: str, category: str):
         if response.status_code != 200: return None
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # 1. Scrape Weapon Image
+        # Scrape Weapon Image
         img_tag = soup.find('meta', property="og:image")
         image_url = img_tag['content'] if img_tag else None
 
-        # 2. Refined Scrape Logic for Budget vs Expensive
+        # Refined Scrape Logic for Budget vs Expensive
         build_cards = soup.find_all('div', class_=re.compile("card|loadout", re.IGNORECASE))
         if not build_cards: return None
 
